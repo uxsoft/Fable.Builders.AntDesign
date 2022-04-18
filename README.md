@@ -1,5 +1,7 @@
 # Fable.Builders.AntDesign
 
+<img src="https://buildstats.info/nuget/Fable.Builders.AntDesign" alt="badge"/>
+
 ## Getting Started
 
 - Include the bindings from NuGet:
