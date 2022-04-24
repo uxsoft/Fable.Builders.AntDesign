@@ -140,6 +140,8 @@ let List<'T> = List.ListBuilder<'T>()
 let ListItem = Fable.Builders.AntDesign.List.ListItemBuilder()
 let ListItemMeta = Fable.Builders.AntDesign.List.ListItemMetaBuilder()
 
+let Segmented = Fable.Builders.AntDesign.Segmented.SegmentedBuilder()
+
 let Statistic = Statistic.StatisticBuilder()
 let Countdown = Fable.Builders.AntDesign.Statistic.StatisticCountdownBuilder()
 

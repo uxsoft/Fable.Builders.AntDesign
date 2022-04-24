@@ -52,6 +52,7 @@
     <Compile Include="Empty.fs" />
     <Compile Include="Image.fs" />
     <Compile Include="List.fs" />
+    <Compile Include="Segmented.fs" />
     <Compile Include="Statistic.fs" />
     <Compile Include="Table.fs" />
     <Compile Include="Tabs.fs" />
