@@ -69,7 +69,6 @@ module Menu =
             let attrs = s.Attributes @ [
                 ("items", s.Children |> List.toArray |> box)
             ]
-            Browser.Dom.console.log (createObj attrs)
             Interop.reactApi.createElement(import "Menu" "antd", createObj attrs, [])
     
     type MenuItemBuilder() =
