@@ -57,8 +57,8 @@ module Typography =
         [<CustomOperation("tooltips")>] member inline _.tooltips (x: DSLElement, v: bool) = x.attr "tooltips" v
         [<CustomOperation("onCopy")>] member inline _.onCopy (x: DSLElement, v: unit -> unit) = x.attr "onCopy" v
         
-    type TypographyBuilder() =
-        inherit ReactBuilder()
+    type TypographyBuilder(?import: obj) =
+        inherit ReactBuilder(import)
         
         [<CustomOperation("code")>] member inline _.code (x: DSLElement, v: bool) = x.attr "code" v
         [<CustomOperation("copyable")>] member inline _.copyable (x: DSLElement, v: bool) = x.attr "copyable" v
@@ -74,31 +74,22 @@ module Typography =
     
       
     type TextBuilder() =
-        inherit TypographyBuilder()
-        
-        member x.Run(s: DSLElement) = ofImport "Typography.Text" "antd" (createObj s.Attributes) s.Children
+        inherit TypographyBuilder(import "Typography.Text" "antd")
         
         [<CustomOperation("keyboard")>] member inline _.keyboard (x: DSLElement, v: bool) = x.attr "keyboard" v
     
     type TitleBuilder() =
-        inherit TypographyBuilder()
-        
-        member x.Run(s: DSLElement) = ofImport "Typography.Title" "antd" (createObj s.Attributes) s.Children
+        inherit TypographyBuilder(import "Typography.Title" "antd")
         
         [<CustomOperation("level")>] member inline _.level (x: DSLElement, v: int) = x.attr "level" v
     
     
     type ParagraphBuilder() =
-        inherit TypographyBuilder()
-        
-        member x.Run(s: DSLElement) = ofImport "Typography.Paragraph" "antd" (createObj s.Attributes) s.Children
-        
+        inherit TypographyBuilder(import "Typography.Paragraph" "antd")
     
     type LinkBuilder() =
-        inherit TypographyBuilder()
-        
-        member x.Run(s: DSLElement) = ofImport "Typography.Link" "antd" (createObj s.Attributes) s.Children
-        
+        inherit TypographyBuilder(import "Typography.Link" "antd")
+                
         [<CustomOperation("keyboard")>] member inline _.keyboard (x: DSLElement, v: bool) = x.attr "keyboard" v
         [<CustomOperation("href")>] member inline _.href (x: DSLElement, v: string) = x.attr "href" v
         [<CustomOperation("target")>] member inline _.target (x: DSLElement, v: string) = x.attr "target" v

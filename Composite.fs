@@ -2,7 +2,6 @@ namespace Fable.Builders.AntDesign
 
 open Fable.Builders.Common
 open Fable.Builders.AntDesign.Ant
-open Fable.React.Props
 open Feliz
 
 [<AutoOpen>]
